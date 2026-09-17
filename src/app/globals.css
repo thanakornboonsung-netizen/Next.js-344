@@ -1,0 +1,2377 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: #1f2937;
+  background: #f0fdf4;
+  font-family: Arial, sans-serif;
+}
+
+/* =========================
+   ชื่อเว็บไซต์
+========================= */
+
+.Name {
+  margin: 0;
+  padding: 20px;
+  color: white;
+  background: #2e7d32;
+  text-align: center;
+  font-size: 2rem;
+}
+
+/* =========================
+   Header
+========================= */
+
+.siteHeader {
+  background: #14532d;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* =========================
+   Navbar
+   ไม่เปลี่ยน
+========================= */
+
+.navbar,
+.page {
+  width: min(100% - 2rem, 70rem);
+  margin-inline: auto;
+}
+
+.navList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0.75rem 0;
+  list-style: none;
+}
+
+.navLink {
+  display: block;
+  padding: 0.6rem 1rem;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  border-radius: 0.5rem;
+  transition: 0.2s;
+}
+
+.navLink:hover,
+.navLink:focus-visible {
+  background: #166534;
+  text-decoration: none;
+}
+
+/* =========================
+   เนื้อหาหลัก
+========================= */
+
+.page {
+  width: min(100% - 2rem, 70rem);
+  min-height: 70vh;
+  margin-inline: auto;
+  padding-block: 2rem;
+}
+
+/* =========================
+   ส่วนแนะนำเว็บไซต์
+========================= */
+
+.intro {
+  margin-bottom: 20px;
+  padding: 20px;
+  background: white;
+  border: 1px solid #c8e6c9;
+  border-radius: 10px;
+}
+
+.intro p {
+  line-height: 1.7;
+}
+
+/* =========================
+   ข้อมูลระบบ
+========================= */
+
+.infoBox {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.infoItem {
+  flex: 1;
+  padding: 15px;
+  background: #e8f5e9;
+  border: 1px solid #c8e6c9;
+  border-radius: 8px;
+}
+
+.infoItem h3 {
+  margin-top: 0;
+  color: #2e7d32;
+}
+
+/* =========================
+   หัวข้อ
+========================= */
+
+.sectionTitle {
+  width: 100%;
+  margin: 0 0 20px 0;
+  padding: 0;
+  color: #2e7d32;
+  text-align: center !important;
+}
+
+.intro h2 {
+  color: #2e7d32;
+}
+
+/* =========================
+   รายการหัวข้อ
+========================= */
+
+.topicList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.topicList li {
+  margin-bottom: 8px;
+  padding: 10px 15px;
+  background: #e8f5e9;
+  border-left: 4px solid #4caf50;
+  border-radius: 5px;
+}
+
+/* =========================
+   สถานะเปิด / ปิด
+========================= */
+
+.statusOpen {
+  display: inline-block;
+  padding: 5px 10px;
+  color: #1b5e20;
+  background: #c8e6c9;
+  border-radius: 15px;
+}
+
+.statusClosed {
+  display: inline-block;
+  padding: 5px 10px;
+  color: #b71c1c;
+  background: #ffcdd2;
+  border-radius: 15px;
+}
+
+/* =========================
+   Footer
+========================= */
+
+.footer {
+  margin-top: 2rem;
+  padding: 1.5rem 1rem;
+  color: white;
+  background: #14532d;
+  text-align: center;
+}
+
+.footer p {
+  margin: 0;
+}
+
+/* =========================
+   มือถือ
+========================= */
+
+@media (max-width: 600px) {
+  .Name {
+    font-size: 1.5rem;
+  }
+
+  /* Navbar เดิม */
+  .navList {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .navLink {
+    width: 100%;
+    text-align: center;
+  }
+
+  .page {
+    width: min(100% - 1rem, 70rem);
+    padding-block: 1.5rem;
+  }
+
+  .infoBox {
+    flex-direction: column;
+  }
+}
+
+/* =========================
+   หน้ารายวิชา
+========================= */
+
+/* =========================
+   COURSES PAGE
+========================= */
+
+.courses-page {
+  padding: 40px 20px 60px;
+}
+
+.courses-page > h1 {
+  margin: 0 0 30px;
+  text-align: center;
+  color: #166534;
+  font-size: 2.2rem;
+  font-weight: 800;
+}
+
+/* =========================
+   COURSE TOOLS
+========================= */
+
+.course-tools {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+
+  margin: 0 auto 35px;
+  padding: 20px;
+
+  max-width: 1000px;
+
+  background: white;
+  border: 1px solid #bbf7d0;
+  border-radius: 16px;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* ช่องค้นหา */
+
+.course-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.course-search input {
+  width: 320px;
+  height: 45px;
+
+  padding: 0 15px 0 45px;
+
+  border: 2px solid #bbf7d0;
+  border-radius: 12px;
+
+  outline: none;
+
+  font-size: 1rem;
+
+  background: #f0fdf4;
+
+  transition: 0.2s ease;
+}
+
+.course-search input:focus {
+  border-color: #22c55e;
+
+  background: white;
+
+  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.12);
+}
+
+.search-icon {
+  position: absolute;
+  left: 15px;
+
+  font-size: 18px;
+
+  pointer-events: none;
+}
+
+/* =========================
+   FAVORITE COUNT
+========================= */
+
+.course-favorite-count {
+  padding: 11px 18px;
+
+  border-radius: 12px;
+
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+
+  color: #166534;
+
+  font-size: 0.95rem;
+}
+
+.course-favorite-count strong {
+  font-size: 1.1rem;
+}
+
+/* =========================
+   FAVORITE FILTER BUTTON
+========================= */
+
+.favorite-filter-btn {
+  min-height: 45px;
+
+  padding: 0 20px;
+
+  border: none;
+  border-radius: 12px;
+
+  background: #166534;
+  color: white;
+
+  font-size: 0.95rem;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.favorite-filter-btn:hover {
+  background: #15803d;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 6px 15px rgba(22, 101, 52, 0.2);
+}
+
+.favorite-filter-btn:active {
+  transform: translateY(0);
+}
+
+/* =========================
+   COURSE GRID
+========================= */
+
+.courses-page .course-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 25px;
+
+  max-width: 1100px;
+
+  margin: 0 auto;
+
+  padding: 0;
+
+  background: transparent;
+  border: none;
+}
+
+/* =========================
+   COURSE CARD
+========================= */
+
+.courses-page .course-card {
+  padding: 25px;
+
+  background: white;
+
+  border: 1px solid #bbf7d0;
+  border-radius: 18px;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.courses-page .course-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* ชื่อวิชา */
+
+.courses-page .course-card h2 {
+  margin: 0 0 15px;
+
+  color: #166534;
+
+  font-size: 1.35rem;
+  font-weight: 800;
+}
+
+/* ข้อมูลวิชา */
+
+.courses-page .course-card p {
+  margin: 8px 0;
+
+  color: #374151;
+
+  font-size: 0.95rem;
+}
+
+/* =========================
+   COURSE FAVORITE BUTTON
+========================= */
+
+.courses-page .course-card button {
+  width: 100%;
+
+  margin-top: 18px;
+
+  padding: 11px 15px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #f0fdf4;
+  color: #166534;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.courses-page .course-card button:hover {
+  background: #dcfce7;
+
+  transform: translateY(-1px);
+}
+
+/* =========================
+   EMPTY STATE
+========================= */
+
+.course-empty {
+  max-width: 700px;
+
+  margin: 30px auto;
+
+  padding: 50px 20px;
+
+  text-align: center;
+
+  background: white;
+
+  border: 1px solid #bbf7d0;
+  border-radius: 18px;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+.empty-icon {
+  margin-bottom: 10px;
+
+  font-size: 3rem;
+}
+
+.course-empty h2 {
+  margin: 10px 0;
+
+  color: #166534;
+}
+
+.course-empty p {
+  margin: 0;
+
+  color: #6b7280;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .courses-page {
+    padding: 30px 15px 45px;
+  }
+
+  .courses-page > h1 {
+    font-size: 1.8rem;
+  }
+
+  .course-tools {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .course-search {
+    width: 100%;
+  }
+
+  .course-search input {
+    width: 100%;
+  }
+
+  .course-favorite-count,
+  .favorite-filter-btn {
+    width: 100%;
+
+    text-align: center;
+  }
+
+  .courses-page .course-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================
+   หน้า About
+========================= */
+
+.aboutBox {
+  padding: 25px;
+  background: white;
+  border: 1px solid #bbf7d0;
+  border-radius: 10px;
+}
+
+.aboutBox h1 {
+  margin-top: 0;
+  color: #14532d;
+}
+
+.aboutBox p {
+  line-height: 1.7;
+}
+
+/* =========================
+   Band Page
+========================= */
+
+/* พื้นหลังหน้า Band */
+
+.bands-page {
+  padding: 30px 0 50px;
+}
+
+/* หัวข้อหลัก */
+
+.bands-page > h1 {
+  margin: 0 0 30px;
+  color: #14532d;
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+/* =========================
+   ค้นหา + รายการโปรด
+========================= */
+
+.band-tools {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 0 auto 30px;
+  padding: 18px 20px;
+  background: #ffffff;
+  border: 1px solid #c8e6c9;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+/* ช่องค้นหา */
+
+.band-tools input[type="search"] {
+  width: 320px;
+  max-width: 100%;
+  padding: 12px 16px;
+  color: #1f2937;
+  background: #f8fff9;
+  border: 2px solid #c8e6c9;
+  border-radius: 12px;
+  outline: none;
+  font-size: 1rem;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.band-tools input[type="search"]:focus {
+  background: #ffffff;
+  border-color: #2e7d32;
+  box-shadow: 0 0 0 4px rgba(46, 125, 50, 0.12);
+}
+
+/* ข้อความจำนวนรายการโปรด */
+
+.band-tools p {
+  margin: 0;
+  padding: 10px 15px;
+  color: #1b5e20;
+  background: #e8f5e9;
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+/* =========================
+   ปุ่มแสดงรายการโปรด
+========================= */
+
+.band-tools > button {
+  padding: 11px 17px;
+  color: white;
+  background: #2e7d32;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 700;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.band-tools > button:hover {
+  background: #1b5e20;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(46, 125, 50, 0.25);
+}
+
+.band-tools > button:active {
+  transform: translateY(0);
+}
+
+/* =========================
+   Grid ของวง
+========================= */
+
+.band-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  margin-top: 20px;
+}
+
+/* =========================
+   Band Card
+========================= */
+
+.band-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 18px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+/* เส้นด้านบนของ Card */
+
+.band-card::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  z-index: 2;
+}
+
+/* Hover */
+
+.band-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.14);
+}
+
+/* =========================
+   รูปวง
+========================= */
+
+.band-image {
+  display: block;
+  width: 100%;
+  height: 650px;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.4s ease;
+}
+
+/* Zoom รูปตอน Hover */
+
+.band-card:hover .band-image {
+  transform: scale(1.04);
+}
+
+/* =========================
+   เนื้อหา
+========================= */
+
+.band-content {
+  padding: 22px 22px 24px;
+}
+
+/* ชื่อวง */
+
+.band-content h2 {
+  margin: 0 0 8px;
+  font-size: 1.6rem;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+/* แนวเพลง */
+
+.band-content p:first-of-type {
+  display: inline-block;
+  margin: 0 0 12px;
+  padding: 5px 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 20px;
+}
+
+/* คำอธิบาย */
+
+.band-content p {
+  line-height: 1.7;
+}
+
+/* =========================
+   สมาชิก
+========================= */
+
+.band-content h3 {
+  margin-top: 24px;
+  padding-bottom: 8px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* รายชื่อสมาชิก */
+
+.band-content ul {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin: 12px 0 0;
+}
+
+/* สมาชิกแต่ละคน */
+
+.band-content li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  padding: 10px 12px;
+  border-left: none;
+  border-radius: 12px;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.band-content li:hover {
+  transform: translateX(4px);
+}
+
+/* =========================
+   รูปสมาชิก
+========================= */
+
+.member-image {
+  width: 58px;
+  height: 58px;
+  flex-shrink: 0;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* =========================
+   Serious Bacon
+========================= */
+
+.band-grid .band-card:nth-child(1)::before {
+  background: #e58b80;
+}
+
+.band-grid .band-card:nth-child(1) .band-content p:first-of-type {
+  color: #a94c43;
+  background: #ffe3de;
+}
+
+.band-grid .band-card:nth-child(1) .member-image {
+  border-color: #f3c4bd;
+}
+
+/* =========================
+   Dept
+========================= */
+
+.band-grid .band-card:nth-child(2)::before {
+  background: #7182c7;
+}
+
+.band-grid .band-card:nth-child(2) .band-content p:first-of-type {
+  color: #46559b;
+  background: #e4e8ff;
+}
+
+.band-grid .band-card:nth-child(2) .member-image {
+  border-color: #c7cff2;
+}
+
+/* =========================
+   Safeplanet
+========================= */
+
+.band-grid .band-card:nth-child(3)::before {
+  background: #54a99a;
+}
+
+.band-grid .band-card:nth-child(3) .band-content p:first-of-type {
+  color: #276d61;
+  background: #dff3ed;
+}
+
+.band-grid .band-card:nth-child(3) .member-image {
+  border-color: #b9ddd4;
+}
+
+/* =========================
+   ปุ่มใน Band Card
+========================= */
+
+.band-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* ปุ่มทั่วไป */
+
+.band-actions button {
+  flex: 1;
+  min-width: 150px;
+  padding: 11px 14px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+/* =========================
+   ปุ่มรายการโปรด
+========================= */
+
+.band-actions button:first-child {
+  color: #856404;
+  background: #fff3cd;
+}
+
+.band-actions button:first-child:hover {
+  background: #ffe69c;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(133, 100, 4, 0.15);
+}
+
+/* เมื่ออยู่ในรายการโปรด */
+
+.band-actions button:first-child[aria-pressed="true"] {
+  color: #ffffff;
+  background: #d99a00;
+}
+
+/* =========================
+   ปุ่ม Like
+========================= */
+
+.band-actions button:last-child {
+  color: #a33a46;
+  background: #ffe4e8;
+}
+
+.band-actions button:last-child:hover {
+  background: #ffcdd2;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(211, 47, 47, 0.15);
+}
+
+/* เมื่อกด Like แล้ว */
+
+.band-actions button:last-child[aria-pressed="true"] {
+  color: #ffffff;
+  background: #e57373;
+}
+
+/* กดปุ่ม */
+
+.band-actions button:active {
+  transform: translateY(0);
+}
+
+/* =========================
+   Empty State
+========================= */
+
+.bands-page > p {
+  margin: 30px auto;
+  padding: 25px;
+  max-width: 600px;
+  color: #4b5563;
+  background: #ffffff;
+  border: 1px dashed #a5d6a7;
+  border-radius: 14px;
+  text-align: center;
+  font-size: 1.05rem;
+}
+
+/* =========================
+   Tablet
+========================= */
+
+@media (max-width: 900px) {
+  .band-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .band-image {
+    height: 210px;
+  }
+}
+
+/* =========================
+   Mobile
+========================= */
+
+@media (max-width: 600px) {
+  .bands-page {
+    padding: 20px 0 40px;
+  }
+
+  .bands-page > h1 {
+    font-size: 1.7rem;
+    margin-bottom: 20px;
+  }
+
+  .band-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .band-image {
+    height: 220px;
+  }
+
+  .band-content {
+    padding: 18px;
+  }
+
+  .band-content h2 {
+    font-size: 1.4rem;
+  }
+
+  .member-image {
+    width: 52px;
+    height: 52px;
+  }
+
+  /* เครื่องมือค้นหาบนมือถือ */
+
+  .band-tools {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+
+  .band-tools input[type="search"] {
+    width: 100%;
+  }
+
+  .band-tools p,
+  .band-tools > button {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* ปุ่มใน Card บนมือถือ */
+
+  .band-actions {
+    flex-direction: column;
+  }
+
+  .band-actions button {
+    width: 100%;
+  }
+}
+  /* -------------------------
+   พื้นหลังหน้ารายวิชา
+   ------------------------- */
+
+  .courses-page {
+    position: relative;
+    width: min(100% - 2rem, 72rem);
+    min-height: 70vh;
+
+    margin: 0 auto;
+    padding: 45px 20px 70px;
+
+    background:
+      radial-gradient(
+        circle at 10% 10%,
+        rgba(34, 197, 94, 0.08),
+        transparent 25%
+      ),
+      radial-gradient(
+        circle at 90% 85%,
+        rgba(20, 83, 45, 0.06),
+        transparent 25%
+      );
+  }
+
+  /* =========================================================
+   หัวข้อรายวิชา
+   ========================================================= */
+
+  .courses-page > h1 {
+  margin: 0 0 38px;
+
+  color: #14532d;
+
+  text-align: center;
+
+  font-size: clamp(2rem, 4vw, 2.7rem);
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+  /* =========================================================
+   กล่องเครื่องมือค้นหา
+   ========================================================= */
+
+  .courses-page .course-tools {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 14px;
+
+    max-width: 1050px;
+
+    margin: 0 auto 32px;
+    padding: 18px;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    border: 1px solid #bbf7d0;
+    border-radius: 18px;
+
+    box-shadow: 0 8px 25px rgba(20, 83, 45, 0.08);
+
+    backdrop-filter: blur(8px);
+  }
+
+  /* =========================================================
+   ช่องค้นหา
+   ========================================================= */
+
+  .courses-page .course-search {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    flex: 1;
+  }
+
+  .courses-page .course-search input {
+    width: 100%;
+    height: 48px;
+
+    padding: 0 18px 0 45px;
+
+    color: #14532d;
+
+    background: #f0fdf4;
+
+    border: 2px solid #bbf7d0;
+    border-radius: 12px;
+
+    outline: none;
+
+    font-size: 1rem;
+
+    transition:
+      border-color 0.2s ease,
+      box-shadow 0.2s ease,
+      background 0.2s ease;
+  }
+
+  .courses-page .course-search input::placeholder {
+    color: #6b7280;
+  }
+
+  .courses-page .course-search input:hover {
+    border-color: #86efac;
+  }
+
+  .courses-page .course-search input:focus {
+    background: #ffffff;
+
+    border-color: #22c55e;
+
+    box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.12);
+  }
+
+  /* ไอคอนค้นหา */
+
+  .courses-page .search-icon {
+    position: absolute;
+
+    left: 15px;
+
+    color: #166534;
+
+    font-size: 18px;
+
+    pointer-events: none;
+  }
+
+  /* =========================================================
+   จำนวนรายการโปรด
+   ========================================================= */
+
+  .courses-page .course-favorite-count {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 160px;
+    height: 48px;
+
+    padding: 0 18px;
+
+    color: #166534;
+
+    background: linear-gradient(135deg, #ecfdf5, #dcfce7);
+
+    border: 1px solid #86efac;
+    border-radius: 12px;
+
+    font-size: 0.95rem;
+    font-weight: 700;
+
+    box-shadow: 0 3px 8px rgba(20, 83, 45, 0.05);
+  }
+
+  .courses-page .course-favorite-count strong {
+    margin-left: 4px;
+
+    color: #14532d;
+
+    font-size: 1.15rem;
+  }
+
+  /* =========================================================
+   ปุ่มแสดงรายการโปรด
+   ========================================================= */
+
+  .courses-page .favorite-filter-btn {
+    min-height: 48px;
+
+    padding: 0 20px;
+
+    color: #ffffff;
+
+    background: linear-gradient(135deg, #166534, #15803d);
+
+    border: none;
+    border-radius: 12px;
+
+    font-size: 0.95rem;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow: 0 5px 12px rgba(22, 101, 52, 0.18);
+
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease,
+      background 0.2s ease;
+  }
+
+  .courses-page .favorite-filter-btn:hover {
+    background: linear-gradient(135deg, #15803d, #22c55e);
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 18px rgba(22, 101, 52, 0.25);
+  }
+
+  .courses-page .favorite-filter-btn:active {
+    transform: translateY(0);
+  }
+
+  /* =========================================================
+   GRID รายวิชา
+   ========================================================= */
+
+  .courses-page .course-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 24px;
+
+    max-width: 1050px;
+
+    margin: 0 auto;
+
+    padding: 0;
+  }
+
+  /* =========================================================
+   CARD รายวิชา
+   ========================================================= */
+
+  .courses-page .course-card {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    min-height: 275px;
+
+    padding: 26px;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border: 1px solid #bbf7d0;
+    border-radius: 20px;
+
+    box-shadow: 0 7px 20px rgba(20, 83, 45, 0.07);
+
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease,
+      border-color 0.25s ease;
+  }
+
+  /* แถบสีด้านบน Card */
+
+  .courses-page .course-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 6px;
+
+    background: linear-gradient(90deg, #14532d, #22c55e);
+  }
+
+  /* วงกลมตกแต่งมุม */
+
+  .courses-page .course-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 110px;
+    height: 110px;
+
+    top: -55px;
+    right: -55px;
+
+    border-radius: 50%;
+
+    background: rgba(34, 197, 94, 0.07);
+
+    transition: transform 0.3s ease;
+  }
+
+  .courses-page .course-card:hover::after {
+    transform: scale(1.25);
+  }
+
+  /* Hover Card */
+
+  .courses-page .course-card:hover {
+    transform: translateY(-7px);
+
+    border-color: #4ade80;
+
+    box-shadow: 0 15px 35px rgba(20, 83, 45, 0.14);
+  }
+  /* =========================================================
+   ชื่อวิชา
+   ========================================================= */
+
+  .course-card h2 {
+    margin: 0 0 14px;
+
+    font-size: 1.35rem;
+    font-weight: 800;
+
+    line-height: 1.4;
+  }
+
+  /* ชื่อวิชาที่เป็น Link */
+
+  .course-card h2 a {
+    color: #14532d;
+
+    text-decoration: none;
+
+    transition:
+      color 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  /* ตอนเอาเมาส์ไปวาง */
+
+  .course-card h2 a:hover {
+    color: #16a34a;
+    text-decoration: none;
+  }
+
+  /* =========================================================
+   ข้อมูลภายใน Card
+   ========================================================= */
+
+  .courses-page .course-card p {
+    position: relative;
+    z-index: 1;
+
+    margin: 9px 0;
+
+    padding: 9px 12px;
+
+    color: #374151;
+
+    background: #f8fffa;
+
+    border-left: 3px solid #86efac;
+    border-radius: 7px;
+
+    font-size: 0.95rem;
+
+    line-height: 1.5;
+  }
+
+  /* =========================================================
+   สถานะเปิด / ปิด
+   ========================================================= */
+
+  /* เปิดลงทะเบียน */
+
+  .courses-page .course-card p:nth-of-type(3) {
+    width: fit-content;
+
+    padding: 6px 12px;
+
+    color: #166534;
+
+    background: #dcfce7;
+
+    border: 1px solid #86efac;
+    border-left: 1px solid #86efac;
+
+    border-radius: 999px;
+
+    font-size: 0.85rem;
+    font-weight: 700;
+  }
+
+  /* =========================================================
+   ปุ่มต่าง ๆ ใน Card
+   ========================================================= */
+
+  .courses-page .course-card button {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+
+    margin-top: 9px;
+
+    padding: 11px 15px;
+
+    border: none;
+    border-radius: 10px;
+
+    font-size: 0.9rem;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease,
+      background 0.2s ease;
+  }
+
+  /* -------------------------
+   ปุ่ม Favorite
+   ------------------------- */
+
+  .courses-page .course-card button[aria-pressed] {
+    color: #166534;
+
+    background: #ecfdf5;
+
+    border: 1px solid #86efac;
+  }
+
+  .courses-page .course-card button[aria-pressed]:hover {
+    color: #ffffff;
+
+    background: #22c55e;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 6px 14px rgba(34, 197, 94, 0.2);
+  }
+
+  /* Favorite ที่เลือกแล้ว */
+
+  .courses-page .course-card button[aria-pressed="true"] {
+    color: #ffffff;
+
+    background: #15803d;
+
+    border-color: #15803d;
+  }
+
+  .courses-page .course-card button[aria-pressed="true"]:hover {
+    background: #166534;
+  }
+
+  /* -------------------------
+   ปุ่มแก้ไข
+   ------------------------- */
+
+  .courses-page .course-card button:not([aria-pressed]) {
+    color: #166534;
+
+    background: #f0fdf4;
+
+    border: 1px solid #bbf7d0;
+  }
+
+  .courses-page .course-card button:not([aria-pressed]):hover {
+    background: #dcfce7;
+
+    transform: translateY(-2px);
+  }
+
+  /* -------------------------
+   ปุ่มลบ
+   ------------------------- */
+
+  /* ปุ่มลบเป็นปุ่มสุดท้าย */
+
+  .courses-page .course-card button:last-child {
+    color: #b91c1c;
+
+    background: #fef2f2;
+
+    border: 1px solid #fecaca;
+  }
+
+  .courses-page .course-card button:last-child:hover {
+    color: #ffffff;
+
+    background: #dc2626;
+
+    border-color: #dc2626;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 6px 14px rgba(220, 38, 38, 0.18);
+  }
+
+  /* =========================================================
+   Empty State
+   ========================================================= */
+
+  .courses-page .course-empty {
+    max-width: 700px;
+
+    margin: 30px auto;
+
+    padding: 50px 25px;
+
+    text-align: center;
+
+    background: #ffffff;
+
+    border: 1px dashed #86efac;
+    border-radius: 20px;
+
+    box-shadow: 0 8px 20px rgba(20, 83, 45, 0.06);
+  }
+
+  .courses-page .empty-icon {
+    margin-bottom: 12px;
+
+    font-size: 3rem;
+  }
+
+  .courses-page .course-empty h2 {
+    margin: 10px 0;
+
+    color: #166534;
+  }
+
+  .courses-page .course-empty p {
+    margin: 0;
+
+    color: #6b7280;
+  }
+
+  /* =========================================================
+   Responsive - Tablet
+   ========================================================= */
+
+  @media (max-width: 768px) {
+    .courses-page {
+      padding: 35px 15px 50px;
+    }
+
+    .courses-page > h1 {
+      font-size: 2rem;
+    }
+
+    .courses-page .course-tools {
+      flex-direction: column;
+      align-items: stretch;
+
+      padding: 15px;
+    }
+
+    .courses-page .course-search {
+      width: 100%;
+    }
+
+    .courses-page .course-search input {
+      width: 100%;
+    }
+
+    .courses-page .course-favorite-count,
+    .courses-page .favorite-filter-btn {
+      width: 100%;
+    }
+
+    .courses-page .course-grid {
+      grid-template-columns: 1fr;
+
+      gap: 18px;
+    }
+  }
+
+  /* =========================================================
+   Responsive - Mobile
+   ========================================================= */
+
+  @media (max-width: 480px) {
+    .courses-page {
+      width: 100%;
+
+      padding: 28px 12px 45px;
+    }
+
+    .courses-page > h1 {
+      margin-bottom: 28px;
+
+      font-size: 1.75rem;
+    }
+
+    .courses-page .course-card {
+      min-height: auto;
+
+      padding: 22px;
+
+      border-radius: 17px;
+    }
+
+    .courses-page .course-card h2 {
+      font-size: 1.25rem;
+    }
+
+    .courses-page .course-card p {
+      font-size: 0.9rem;
+    }
+
+    .courses-page .course-card button {
+      padding: 10px;
+    }
+  }
+/* =========================================================
+   COURSE FORM
+   ฟอร์มเพิ่ม / แก้ไขรายวิชา
+   ========================================================= */
+
+.course-form {
+  width: min(100% - 2rem, 900px);
+
+  margin: 40px auto 15px;
+
+  background: #ffffff;
+
+  border: 2px solid #bbf7d0;
+  border-radius: 22px;
+
+  box-shadow:
+    0 10px 30px rgba(20, 83, 45, 0.1),
+    0 3px 8px rgba(20, 83, 45, 0.05);
+
+  overflow: hidden;
+
+  position: relative;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+/* แถบสีด้านบน */
+
+.course-form::before {
+  content: "";
+
+  display: block;
+
+  width: 100%;
+  height: 6px;
+
+  background: linear-gradient(90deg, #14532d, #16a34a, #4ade80);
+}
+
+/* Hover กรอบ */
+
+.course-form:hover {
+  border-color: #86efac;
+
+  box-shadow:
+    0 15px 35px rgba(20, 83, 45, 0.14),
+    0 4px 10px rgba(20, 83, 45, 0.06);
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.course-form-header {
+  display: flex;
+  align-items: center;
+
+  gap: 16px;
+
+  padding: 24px 30px 20px;
+
+  background: linear-gradient(180deg, #f0fdf4 0%, #ffffff 100%);
+
+  border-bottom: 1px solid #dcfce7;
+}
+
+/* ไอคอน */
+
+.course-form-icon {
+  width: 52px;
+  height: 52px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #dcfce7;
+
+  border: 1px solid #86efac;
+  border-radius: 15px;
+
+  font-size: 1.4rem;
+
+  box-shadow: 0 5px 12px rgba(20, 83, 45, 0.08);
+}
+
+/* กลุ่มหัวข้อ */
+
+.course-form-title {
+  min-width: 0;
+}
+
+/* หัวข้อ */
+
+.course-form-header h2 {
+  margin: 0 0 5px;
+
+  color: #14532d;
+
+  font-size: 1.45rem;
+  font-weight: 800;
+
+  line-height: 1.3;
+}
+
+/* คำอธิบาย */
+
+.course-form-header p {
+  margin: 0;
+
+  color: #6b7280;
+
+  font-size: 0.9rem;
+}
+
+/* =========================================================
+   GRID FORM
+   ========================================================= */
+
+.course-form-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 20px;
+
+  padding: 28px 30px 10px;
+
+  background: #ffffff;
+}
+
+/* แต่ละช่อง */
+
+.course-form-field {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+}
+
+/* =========================================================
+   LABEL
+   ========================================================= */
+
+.course-form-field label {
+  margin-bottom: 8px;
+
+  color: #166534;
+
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+/* =========================================================
+   INPUT
+   ========================================================= */
+
+.course-form-field input {
+  width: 100%;
+  min-height: 48px;
+
+  box-sizing: border-box;
+
+  padding: 11px 14px;
+
+  background: #f8fffa;
+
+  color: #1f2937;
+
+  border: 1.5px solid #bbf7d0;
+  border-radius: 11px;
+
+  outline: none;
+
+  font-family: inherit;
+  font-size: 0.95rem;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+/* Placeholder */
+
+.course-form-field input::placeholder {
+  color: #9ca3af;
+}
+
+/* เมื่อคลิกช่อง */
+
+.course-form-field input:focus {
+  background: #ffffff;
+
+  border-color: #22c55e;
+
+  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.12);
+
+  transform: translateY(-1px);
+}
+
+/* Input ที่มี Error */
+
+.course-form-field input[aria-invalid="true"] {
+  background: #fffafa;
+
+  border-color: #ef4444;
+}
+
+/* Focus ตอน Error */
+
+.course-form-field input[aria-invalid="true"]:focus {
+  border-color: #ef4444;
+
+  box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.1);
+}
+
+/* =========================================================
+   หน่วยกิต
+   ========================================================= */
+
+.course-form-field input[type="number"] {
+  max-width: 180px;
+}
+
+/* =========================================================
+   ERROR
+   ========================================================= */
+
+.course-form-error {
+  margin: 7px 0 0;
+
+  padding: 7px 10px;
+
+  color: #b91c1c;
+
+  background: #fef2f2;
+
+  border: 1px solid #fecaca;
+  border-left: 4px solid #ef4444;
+
+  border-radius: 7px;
+
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+/* =========================================================
+   BUTTON AREA
+   ========================================================= */
+
+.course-form-actions {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 12px;
+
+  margin: 10px 30px 0;
+
+  padding: 20px 0 28px;
+
+  border-top: 1px solid #dcfce7;
+}
+
+/* ปุ่ม */
+
+.course-form-actions button {
+  min-width: 145px;
+
+  padding: 11px 20px;
+
+  border-radius: 10px;
+
+  font-family: inherit;
+
+  font-size: 0.92rem;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+/* =========================================================
+   SAVE BUTTON
+   ========================================================= */
+
+.course-form-save {
+  color: #ffffff;
+
+  background: linear-gradient(135deg, #14532d, #16a34a);
+
+  border: 1px solid #14532d;
+
+  box-shadow: 0 5px 12px rgba(20, 83, 45, 0.18);
+}
+
+.course-form-save:hover {
+  background: linear-gradient(135deg, #166534, #22c55e);
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 8px 18px rgba(20, 83, 45, 0.23);
+}
+
+/* =========================================================
+   CANCEL BUTTON
+   ========================================================= */
+
+.course-form-cancel {
+  color: #166534;
+
+  background: #f0fdf4;
+
+  border: 1px solid #86efac;
+}
+
+.course-form-cancel:hover {
+  color: #14532d;
+
+  background: #dcfce7;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 6px 14px rgba(20, 83, 45, 0.1);
+}
+
+/* กดปุ่ม */
+
+.course-form-actions button:active {
+  transform: translateY(0);
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .course-form {
+    width: min(100% - 1.5rem, 700px);
+
+    margin-top: 30px;
+
+    border-radius: 20px;
+  }
+
+  .course-form-grid {
+    grid-template-columns: 1fr;
+
+    padding: 24px;
+  }
+
+  .course-form-header {
+    padding: 22px 24px 18px;
+  }
+
+  .course-form-actions {
+    margin-left: 24px;
+    margin-right: 24px;
+  }
+
+  .course-form-field input[type="number"] {
+    max-width: none;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+  .course-form {
+    width: calc(100% - 1rem);
+
+    margin-top: 25px;
+
+    border-radius: 17px;
+  }
+
+  .course-form-header {
+    gap: 11px;
+
+    padding: 20px;
+  }
+
+  .course-form-icon {
+    width: 44px;
+    height: 44px;
+
+    border-radius: 12px;
+
+    font-size: 1.2rem;
+  }
+
+  .course-form-header h2 {
+    font-size: 1.15rem;
+  }
+
+  .course-form-header p {
+    font-size: 0.8rem;
+  }
+
+  .course-form-grid {
+    gap: 16px;
+
+    padding: 20px;
+  }
+
+  .course-form-field input {
+    min-height: 45px;
+
+    font-size: 0.9rem;
+  }
+
+  .course-form-actions {
+    flex-direction: column;
+
+    gap: 10px;
+
+    margin: 4px 20px 0;
+
+    padding: 18px 0 22px;
+  }
+
+  .course-form-actions button {
+    width: 100%;
+  }
+}
+/* =========================
+   Games Page
+========================= */
+
+.games-page {
+  width: min(100% - 2rem, 70rem);
+  margin: 0 auto;
+  padding: 40px 0 60px;
+}
+
+.games-page > h1 {
+  margin: 0 0 30px;
+  text-align: center;
+  color: #14532d;
+  font-size: clamp(2rem, 4vw, 2.7rem);
+  font-weight: 800;
+}
+
+
+/* =========================
+   Game Form
+========================= */
+
+.game-form {
+  max-width: 650px;
+  margin: 0 auto 45px;
+  padding: 28px;
+  background: white;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(20, 83, 45, 0.1);
+}
+
+.game-form h2 {
+  margin: 0 0 25px;
+  color: #166534;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 7px;
+  color: #14532d;
+  font-weight: 700;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 11px 13px;
+  border: 1px solid #bbf7d0;
+  border-radius: 10px;
+  background: #f0fdf4;
+  color: #1f2937;
+  font-size: 1rem;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #22c55e;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.12);
+}
+
+.form-error {
+  margin: 6px 0 0;
+  color: #dc2626;
+  font-size: 0.9rem;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.form-actions button {
+  flex: 1;
+  padding: 11px 16px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.save-button {
+  background: #16a34a;
+  color: white;
+}
+
+.save-button:hover {
+  background: #15803d;
+}
+
+.cancel-button {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.cancel-button:hover {
+  background: #d1d5db;
+}
+
+
+/* =========================
+   Games List
+========================= */
+
+.games-list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.games-list-header h2 {
+  margin: 0;
+  color: #14532d;
+}
+
+.games-list-header span {
+  padding: 6px 12px;
+  border-radius: 20px;
+  background: #dcfce7;
+  color: #166534;
+  font-weight: 700;
+}
+
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.game-card {
+  padding: 22px;
+  background: white;
+  border-radius: 16px;
+  border: 1px solid #dcfce7;
+  box-shadow: 0 5px 18px rgba(20, 83, 45, 0.08);
+}
+
+.game-card h3 {
+  margin: 0 0 18px;
+  line-height: 1.4;
+}
+
+.game-card h3 a {
+  color: #166534;
+  text-decoration: none;
+}
+
+.game-card h3 a:hover {
+  color: #22c55e;
+}
+
+.game-info p {
+  margin: 9px 0;
+  color: #374151;
+}
+
+.game-status {
+  display: inline-block;
+  padding: 4px 9px;
+  border-radius: 8px;
+  background: #dcfce7;
+  color: #166534;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.game-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.game-actions button {
+  flex: 1;
+  padding: 9px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.edit-button {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.edit-button:hover {
+  background: #fde68a;
+}
+
+.delete-button {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.delete-button:hover {
+  background: #fecaca;
+}
+
+.empty-message {
+  padding: 30px;
+  text-align: center;
+  background: white;
+  border-radius: 15px;
+  color: #6b7280;
+}
+
+
+/* =========================
+   Game Detail
+========================= */
+
+.game-detail-page {
+  width: min(100% - 2rem, 60rem);
+  margin: 0 auto;
+  padding: 50px 0;
+}
+
+.game-detail-page h1 {
+  margin-bottom: 30px;
+  text-align: center;
+  color: #14532d;
+}
+
+.game-detail-card {
+  padding: 30px;
+  background: white;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(20, 83, 45, 0.1);
+}
+
+.game-detail-card p {
+  padding: 12px 0;
+  margin: 0;
+  border-bottom: 1px solid #dcfce7;
+}
+
+.game-detail-card p:last-child {
+  border-bottom: none;
+}
+
+
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width: 900px) {
+  .game-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .games-page {
+    width: min(100% - 1.5rem, 70rem);
+  }
+
+  .game-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .games-list-header {
+    align-items: flex-start;
+    gap: 10px;
+    flex-direction: column;
+  }
+}
