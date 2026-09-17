@@ -188,7 +188,7 @@ export default function GameForm({
                     step="1"
                     value={form.hours}
                     onChange={handleChange}
-                    placeholder="เช่น 20"
+                    placeholder="จำนวนชั่วโมงที่คาดว่าจะใช้เล่น"
                 />
 
                 {errors.hours && (
